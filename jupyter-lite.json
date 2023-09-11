@@ -9,10 +9,7 @@
       "exposeAppInBrowser": true,
       "enableMemoryStorage": true,
       "contentsStorageDrivers": ["memoryStorageDriver"],
-      "settingsStorageDrivers": ["memoryStorageDriver"],
       "disabledExtensions": [
-        "@jupyterlab/drawio-extension",
-        "jupyterlab-kernel-spy",
         "jupyterlab-tour"
       ]
     }
