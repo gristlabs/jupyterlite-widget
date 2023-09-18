@@ -10,6 +10,9 @@
       "enableMemoryStorage": true,
       "contentsStorageDrivers": ["memoryStorageDriver"],
       "disabledExtensions": [
+	"@jupyterlite/server-extension:service-worker",
+	"@jupyterlab/running-extension:plugin",
+	"@jupyterlab/application-extension:property-inspector",
         "jupyterlab-tour"
       ]
     }
