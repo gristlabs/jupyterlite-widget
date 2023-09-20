@@ -15,6 +15,12 @@
     "contentsStorageDrivers": [
       "memoryStorageDriver"
     ],
+    "settingsStorageDrivers": [
+      "asyncStorage",
+      "webSQLStorage",
+      "localStorageWrapper",
+      "memoryStorageDriver"
+    ],
     "disabledExtensions": [
       "@jupyterlite/server-extension:service-worker",
       "@jupyterlab/running-extension:plugin",
