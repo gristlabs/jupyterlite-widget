@@ -20,7 +20,7 @@ You can decorate functions to make them run automatically when data is changed o
 
 ```
 @grist.on_record
-async def show_record(show, record, column_mappings):
+async def show_record(show, record):
     show(record)
 ```
 
@@ -28,4 +28,4 @@ Then under the Data section in the right panel, click the “SELECT BY” dropdo
 
 Similarly, if you use `@grist.on_records` (note the extra `s` at the end) then the function will automatically run when the source data of the widget changes.
 
-Note that the decorated function must have three arguments. The first argument (called `show` in the example above) should be called to display any kind of outputs instead of calling `print` or `display`. The third argument can be ignored.
+The decorated function must have two arguments. The first argument (called `show` in the example above) should be called to display any kind of outputs instead of calling `print` or `display`.
