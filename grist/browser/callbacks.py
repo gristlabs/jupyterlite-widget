@@ -103,7 +103,7 @@ callback_registry = dict(
 
 
 async def on_records_dispatch(grist, *_):
-    records = await grist.raw.fetchSelectedTable(keepEncoded=True)
+    records = await grist.fetch_selected_table()
     for callback in callback_registry["onRecords"].values():
         await callback(records)
 
@@ -112,7 +112,7 @@ async def on_record_dispatch(grist, record, *_rest):
     if not record:
         return
 
-    record = await grist.raw.fetchSelectedRecord(record["id"], keepEncoded=True)
+    record = await grist.fetch_selected_record(record["id"])
     for callback in callback_registry["onRecord"].values():
         await callback(record)
 

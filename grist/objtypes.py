@@ -123,3 +123,7 @@ def decode_bulk_values(bulk_values):
         k: [decode_object(value) for value in values]
         for k, values in bulk_values.items()
     }
+
+
+def decode_record(rec):
+    return {k: decode_object(value) for k, value in rec.items()}
