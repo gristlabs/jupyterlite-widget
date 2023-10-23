@@ -1,3 +1,5 @@
+# This file is essentially copied from the main grist repo.
+
 from datetime import datetime, date, timedelta
 import unittest
 from grist import moment

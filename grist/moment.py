@@ -1,3 +1,5 @@
+# This file is essentially copied from the main grist repo.
+
 from datetime import datetime, timedelta, tzinfo as _tzinfo
 from collections import namedtuple
 import marshal
