@@ -24,7 +24,7 @@ class Grist:
         @run_async
         async def run():
             wrapper = await add_to_callback_registry(self, "onRecord", callback)
-            await wrapper(await self.raw.getCurrentRecord())
+            await wrapper(await self.fetch_selected_record())
 
     async def fetch_selected_table(self):
         return decode_bulk_values(await self.raw.fetchSelectedTable(keepEncoded=True))
