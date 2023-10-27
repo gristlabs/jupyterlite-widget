@@ -2,7 +2,7 @@ The experimental JupyterLite Notebook widget lets you run custom Python code in 
 
 In the custom widget configuration, choose “Custom URL” and paste the following URL:
 
-https://gristlabs.github.io/jupyterlite-widget/lab/index.html
+https://gristlabs.github.io/grist-widget/jupyterlite/
 
 You’ll be presented with a blank notebook where you can enter and run Python code, e.g:
 
