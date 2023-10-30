@@ -4,9 +4,9 @@ In the custom widget configuration, choose “Custom URL” and paste the follow
 
 https://gristlabs.github.io/grist-widget/jupyterlite/
 
-You’ll be presented with a blank notebook where you can enter and run Python code, e.g:
+You’ll be presented with a notebook where you can enter and run Python code, e.g:
 
-![Blank notebook](./images/Screenshot%20from%202023-10-06%2014-38-15.png)
+![Example notebook](./images/Screenshot%20from%202023-10-27%2018-06-30.png)
 
 After typing code in a cell, click the play button or press Shift+Enter to run that cell.
 
@@ -32,3 +32,5 @@ A special object called `grist` is automatically available to use in Python code
   - `async destroy(row_ids)`
 
 You can also use `grist.raw` for direct access to the plugin API, e.g. `await grist.raw.docApi.fetchTable(table_id)`. This may return raw cell values which you can decode with `grist.decode_cell_value(value)`.
+
+You can use many (but not all) third-party libraries in your notebook such as `pandas`. Many will be installed automatically when they're imported. Others will require running `%pip install <package name>` in a cell, e.g. `%pip install pandas`. Note that it's `%pip` and not `!pip` as in a regular Jupyter notebook.
