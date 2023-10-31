@@ -16,7 +16,7 @@ class Grist:
         @run_async
         async def run():
             wrapper = await add_to_callback_registry(self, "onRecords", callback)
-            await wrapper(None)
+            await wrapper(await grist.fetch_selected_table())
 
     def on_record(self, callback):
         check_registering_cell()

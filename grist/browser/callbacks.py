@@ -13,7 +13,7 @@ import js  # noqa
 import pyodide_js  # noqa
 from pyodide.ffi import to_js, create_proxy  # noqa
 
-from .utils import skip_traceback_internals, maybe_await
+from .utils import maybe_await
 
 original_print = print
 original_display = IPython.display.display
@@ -23,6 +23,17 @@ get_ipython().display_formatter.formatters["text/plain"].for_type(
 )
 
 lock = asyncio.Lock()
+
+
+def skip_traceback_internals(tb):
+    filename = (lambda: 0).__code__.co_filename
+    original = tb
+    while tb and tb.tb_frame.f_code.co_filename == filename:
+        tb = tb.tb_next
+    if tb:
+        return tb
+    else:
+        return original
 
 
 def wrap_with_display(func):
