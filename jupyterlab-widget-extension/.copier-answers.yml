@@ -1,0 +1,19 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v4.2.0
+_src_path: https://github.com/jupyterlab/extension-template
+author_email: alex.mojaki@gmail.com
+author_name: Alex Hall
+data_format: string
+file_extension: ''
+has_binder: false
+has_settings: false
+kind: frontend
+labextension_name: grist-widget
+mimetype: ''
+mimetype_name: ''
+project_short_description: Custom Grist widget for a JupyterLite notebook
+python_name: grist_jupyterlab_widget
+repository: ''
+test: false
+viewer_name: ''
+
