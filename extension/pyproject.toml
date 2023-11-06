@@ -26,7 +26,7 @@ dependencies = [
 dynamic = ["version", "description", "authors", "keywords"]
 
 [project.urls]
-Source = "https://github.com/gristlabs/jupyterlab-widget-extension"
+Source = "https://github.com/gristlabs/jupyterlite-widget"
 
 [tool.hatch.version]
 source = "nodejs"

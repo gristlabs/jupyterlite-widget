@@ -7,7 +7,7 @@
         "jupyterlab",
         "jupyterlab-extension"
     ],
-    "homepage": "https://github.com/gristlabs/jupyterlab-widget-extension",
+    "homepage": "https://github.com/gristlabs/jupyterlite-widget",
     "license": "BSD-3-Clause",
     "author": {
         "name": "Alex Hall",
