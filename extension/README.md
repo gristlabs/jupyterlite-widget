@@ -1,31 +1,14 @@
 # grist_jupyterlab_widget
 
-[![Github Actions Status](/workflows/Build/badge.svg)](/actions/workflows/build.yml)
-Custom Grist widget for a JupyterLite notebook
+This is a JupyterLab extension that connects the Grist and JupyterLab APIs. It's tightly coupled with the JupyterLite deployment in this repo (the parent folder) and doesn't work on its own.
 
-## Requirements
+This folder was originally [its own repo](https://github.com/gristlabs/jupyterlab-widget-extension) generated using `copier` following the [extension tutorial](https://jupyterlab.readthedocs.io/en/stable/extension/extension_tutorial.html). This is the source of a lot of boilerplate configuration that probably isn't *all* needed but also probably shouldn't be messed with. Usually this extension would be published on PyPI (and maybe NPM) under the package name `grist_jupyterlab_widget`, but now the parent folder just installs it from the local filesystem.
 
-- JupyterLab >= 4.0.0
 
-## Install
-
-To install the extension, execute:
-
-```bash
-pip install grist_jupyterlab_widget
-```
-
-## Uninstall
-
-To remove the extension, execute:
-
-```bash
-pip uninstall grist_jupyterlab_widget
-```
-
-## Contributing
 
 ### Development install
+
+Below are some of the original instructions included with this repo which may be helpful.
 
 Note: You will need NodeJS to build the extension package.
 
@@ -70,7 +53,3 @@ pip uninstall grist_jupyterlab_widget
 In development mode, you will also need to remove the symlink created by `jupyter labextension develop`
 command. To find its location, you can run `jupyter labextension list` to figure out where the `labextensions`
 folder is located. Then you can remove the symlink named `grist-widget` within that folder.
-
-### Packaging the extension
-
-See [RELEASE](RELEASE.md)
