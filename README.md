@@ -19,11 +19,11 @@ This repo is a custom deployment of JupyterLite generated from https://github.co
 
 ## Deployment
 
-Push changes to the `main` branch. The GitHub Action will build and publish to GitHub Packages.
+Push changes to the `main` branch. The GitHub Action will build and publish to [GitHub Pages](https://gristlabs.github.io/jupyterlite-widget/lab/index.html).
 
 ## Files
 
-- `extension/` contains the JupyterLab extension that connects the Grist and JupyterLab APIs. See the README there.
+- `extension/` contains the JupyterLab extension that connects the Grist and JupyterLab APIs. See the [README there](./extension/README.md) for more details.
 - `grist/` contains most of the Python code that runs inside the JupyterLite Pyodide and that users can call.
 - `package.sh` packages the files under `grist` and puts them in `files/package.tar.gz`. JupyterLite picks up the contents of `files` when building, so the package can be downloaded from http://localhost:8000/files/package.tar.gz. `package.sh` is run by both `dev.sh` and the GitHub Action.
 - `extension/src/initKernelPy.ts` contains the 'bootstrapping' Python code that the extension runs in the kernel on startup. It downloads the package, extracts it, and imports it.
