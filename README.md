@@ -10,7 +10,7 @@ This repo is a custom deployment of JupyterLite generated from https://github.co
 2. `pip install -r requirements.txt`
 3. In the `extension` folder, run `jlpm install`, then `jlpm build`, then `jlpm watch`. `jlpm` is a pinned version of `yarn` that is installed with JupyterLab, so you can use `yarn` or `npm` instead. `jlpm watch` will rebuild the extension when changes are made to the code under `extension/src`. For some reason it doesn't work without running `jlpm build` first at least once.
 4. In a new tab, back in the repo root, activate the virtual environment again, then run `./dev.sh`. This will start a local server at http://localhost:8000 which you can use as a custom widget URL.
-5. Make some changes to the code under `grist` or `extension/src`. Changing `.ts` files will rebuild the JS, but either way you still have to interrupt the server with Ctrl+C, rerun `.dev.sh`, and refresh the page to see the changes.
+5. Make some changes to the code under `grist` or `extension/src`. Changing `.ts` files will rebuild the JS, but either way you still have to interrupt the server with Ctrl+C, rerun `./dev.sh`, and refresh the page to see the changes.
 6. If you're having trouble, try various permutations of these commands:
    - `pip uninstall grist_jupyterlab_widget` (that's the Python package name of the `extension` folder)
    - `pip install -e extension`
@@ -29,3 +29,11 @@ Push changes to the `main` branch. The GitHub Action will build and publish to [
 - `extension/src/initKernelPy.ts` contains the 'bootstrapping' Python code that the extension runs in the kernel on startup. It downloads the package, extracts it, and imports it.
 - `dev.sh` cleans out old state, does some minimal building for development, and starts a local JupyterLite server.
 - `jupyter-lite.json` contains configuration for the JupyterLite deployment.
+
+## Dependencies
+
+The widget loads many resources at runtime:
+
+- The Grist plugin API (used by all custom widgets) from https://docs.getgrist.com/grist-plugin-api.js
+- An optimised, pre-compiled Pyodide distribution from URLs starting with https://cdn.jsdelivr.net/pyodide/v0.24.0/pyc/
+- Python packages (whether required by the widget itself or imported by the user's code) from https://pypi.org/ (for metadata) and https://files.pythonhosted.org/ (for wheel files containing the actual packages).
