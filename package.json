@@ -1,0 +1,25 @@
+{
+  "name": "@gristlabs/widget-jupyterlite",
+  "description": "Widget for a JupyterLite Notebook",
+  "homePage": "https://github.com/gristlabs/jupyterlite-widget",
+  "version": "0.0.1",
+  "grist": [
+    {
+      "name": "JupyterLite Notebook",
+      "url": "https://gristlabs.github.io/grist-widget/jupyterlite/lab/index.html",
+      "widgetId": "@gristlabs/widget-jupyterlite",
+      "published": true,
+      "accessLevel": "read table"
+    }
+  ],
+  "dependencies": {
+    "gh-pages": "^6.1.1"
+  },
+  "scripts": {
+    "clean": "rm -rf _output build dist .jupyterlite.doit.db node_modules/.cache",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build -m \"Deploy `git rev-parse --verify --short HEAD`\"",
+    "start": "./dev.sh",
+    "build": "npm run clean && ./package.sh && jupyter lite build --output-dir build && cp package.json build/package.json"
+  }
+}

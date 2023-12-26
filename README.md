@@ -19,7 +19,13 @@ This repo is a custom deployment of JupyterLite generated from https://github.co
 
 ## Deployment
 
-Push changes to the `main` branch. The GitHub Action will build and publish to [GitHub Pages](https://gristlabs.github.io/jupyterlite-widget/lab/index.html).
+In the [grist-widget](https://github.com/gristlabs/grist-widget) repo, the `jupyterlite` folder is a git submodule pointing at a commit in the `gh-pages` branch of this repo. To fully deploy changes here to production for use in Grist, you need to:
+
+0. Run `npm install` in the root of this repo.
+1. Commit and push changes to this repo. It doesn't have to be in the main branch, but an actual commit is important for reference.
+2. Run `npm run deploy` to build and push to the `gh-pages` branch. The commit message will contain the commit hash of the commit in step 1. You can use https://gristlabs.github.io/jupyterlite-widget/lab/index.html to test the changes in a Grist doc.
+3. In the `grist-widget` repo, run `git submodule update --remote --init` to update the submodule to the latest commit in the `gh-pages` branch. Commit this update, push, and make a PR. The deploy preview URL can be used to test the changes.
+4. Merge the `grist-widget` PR. This will trigger a deploy to production.
 
 ## Files
 
