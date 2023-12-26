@@ -10,7 +10,7 @@ This repo is a custom deployment of JupyterLite generated from https://github.co
 2. `pip install -r requirements.txt`
 3. In the `extension` folder, run `jlpm install`, then `jlpm build`, then `jlpm watch`. `jlpm` is a pinned version of `yarn` that is installed with JupyterLab, so you can use `yarn` or `npm` instead. `jlpm watch` will rebuild the extension when changes are made to the code under `extension/src`. For some reason it doesn't work without running `jlpm build` first at least once.
 4. In a new tab, back in the repo root, activate the virtual environment again, then run `./dev.sh`. This will start a local server at http://localhost:8000 which you can use as a custom widget URL.
-5. Make some changes to the code under `grist` or `extension/src`. Changing `.ts` files will rebuild the JS, but either way you still have to interrupt the server with Ctrl+C, rerun `.dev.sh`, and refresh the page to see the changes.
+5. Make some changes to the code under `grist` or `extension/src`. Changing `.ts` files will rebuild the JS, but either way you still have to interrupt the server with Ctrl+C, rerun `./dev.sh`, and refresh the page to see the changes.
 6. If you're having trouble, try various permutations of these commands:
    - `pip uninstall grist_jupyterlab_widget` (that's the Python package name of the `extension` folder)
    - `pip install -e extension`
