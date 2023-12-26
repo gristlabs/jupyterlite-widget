@@ -29,3 +29,11 @@ Push changes to the `main` branch. The GitHub Action will build and publish to [
 - `extension/src/initKernelPy.ts` contains the 'bootstrapping' Python code that the extension runs in the kernel on startup. It downloads the package, extracts it, and imports it.
 - `dev.sh` cleans out old state, does some minimal building for development, and starts a local JupyterLite server.
 - `jupyter-lite.json` contains configuration for the JupyterLite deployment.
+
+## Dependencies
+
+The widget loads many resources at runtime:
+
+- The Grist plugin API (used by all custom widgets) from https://docs.getgrist.com/grist-plugin-api.js
+- An optimised, pre-compiled Pyodide distribution from URLs starting with https://cdn.jsdelivr.net/pyodide/v0.24.0/pyc/
+- Python packages (whether required by the widget itself or imported by the user's code) from https://pypi.org/ (for metadata) and https://files.pythonhosted.org/ (for wheel files containing the actual packages).
