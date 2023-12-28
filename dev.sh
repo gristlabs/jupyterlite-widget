@@ -2,7 +2,7 @@
 
 set -eux
 
-rm -rf _output .jupyterlite.doit.db
+npm run clean
 jupyter labextension develop ./extension
 ./package.sh
 jupyter lite serve
