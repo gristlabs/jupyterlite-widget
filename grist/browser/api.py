@@ -34,7 +34,12 @@ class Grist:
 
     async def fetch_selected_record(self, row_id=None):
         if row_id is None:
-            row_id = (await self.raw.getCurrentRecord())["id"]
+            record = await self.raw.getCurrentRecord()
+            if record is None:
+                raise Exception(
+                    "No record is currently selected - ensure that the notebook widget is linked to (selecting by) another widget"
+                )
+            row_id = record["id"]
         return decode_record(
             await self.raw.fetchSelectedRecord(row_id, keepEncoded=True)
         )
