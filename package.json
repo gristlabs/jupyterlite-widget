@@ -15,7 +15,8 @@
         {
           "name": "Grist Labs"
         }
-      ]
+      ],
+      "isGristLabsMaintained": true
     }
   ],
   "dependencies": {
