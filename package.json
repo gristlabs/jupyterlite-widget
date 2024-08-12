@@ -9,7 +9,13 @@
       "url": "https://gristlabs.github.io/grist-widget/jupyterlite/lab/index.html",
       "widgetId": "@gristlabs/widget-jupyterlite",
       "published": true,
-      "accessLevel": "read table"
+      "accessLevel": "read table",
+      "description": "Run custom Python code in JupyterLite, a version of JupyterLab running entirely in the browser.",
+      "authors": [
+        {
+          "name": "Grist Labs"
+        }
+      ]
     }
   ],
   "dependencies": {
