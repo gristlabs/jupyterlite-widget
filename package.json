@@ -13,7 +13,8 @@
       "description": "Run custom Python code in JupyterLite, a version of JupyterLab running entirely in the browser.",
       "authors": [
         {
-          "name": "Grist Labs"
+          "name": "Grist Labs",
+          "url": "https://github.com/gristlabs"
         }
       ],
       "isGristLabsMaintained": true
