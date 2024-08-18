@@ -10,8 +10,8 @@
         {
           "test": "/(?<!\\.raw)\\.css$/",
           "use": [
-            "/home/alex/work/jupyterlite-demo/extension/node_modules/style-loader/dist/cjs.js",
-            "/home/alex/work/jupyterlite-demo/extension/node_modules/css-loader/dist/cjs.js"
+            "/Users/georgegevoian/grist/jupyterlite-widget/extension/node_modules/style-loader/dist/cjs.js",
+            "/Users/georgegevoian/grist/jupyterlite-widget/extension/node_modules/css-loader/dist/cjs.js"
           ]
         },
         {
@@ -81,7 +81,7 @@
           "test": "/\\.js$/",
           "enforce": "pre",
           "use": [
-            "/home/alex/work/jupyterlite-demo/extension/node_modules/@jupyterlab/builder/node_modules/source-map-loader/dist/cjs.js"
+            "/Users/georgegevoian/grist/jupyterlite-widget/extension/node_modules/@jupyterlab/builder/node_modules/source-map-loader/dist/cjs.js"
           ]
         }
       ]
@@ -91,8 +91,8 @@
         "url": false,
         "buffer": false,
         "crypto": false,
-        "path": "/home/alex/work/jupyterlite-demo/extension/node_modules/path-browserify/index.js",
-        "process": "/home/alex/work/jupyterlite-demo/extension/node_modules/process/browser.js"
+        "path": "/Users/georgegevoian/grist/jupyterlite-widget/extension/node_modules/path-browserify/index.js",
+        "process": "/Users/georgegevoian/grist/jupyterlite-widget/extension/node_modules/process/browser.js"
       }
     },
     "watchOptions": {
@@ -102,7 +102,7 @@
     "output": {
       "hashFunction": "sha256",
       "filename": "[name].[contenthash].js",
-      "path": "/home/alex/work/jupyterlite-demo/extension/grist_jupyterlab_widget/labextension/static",
+      "path": "/Users/georgegevoian/grist/jupyterlite-widget/extension/grist_jupyterlab_widget/labextension/static",
       "publicPath": "auto"
     },
     "plugins": [
@@ -123,9 +123,9 @@
           },
           "filename": "remoteEntry.[contenthash].js",
           "exposes": {
-            "./index": "/home/alex/work/jupyterlite-demo/extension/lib/index.js",
-            "./extension": "/home/alex/work/jupyterlite-demo/extension/lib/index.js",
-            "./style": "/home/alex/work/jupyterlite-demo/extension/style/index.js"
+            "./index": "/Users/georgegevoian/grist/jupyterlite-widget/extension/lib/index.js",
+            "./extension": "/Users/georgegevoian/grist/jupyterlite-widget/extension/lib/index.js",
+            "./style": "/Users/georgegevoian/grist/jupyterlite-widget/extension/style/index.js"
           },
           "shared": {
             "@jupyterlab/application": {
@@ -652,7 +652,7 @@
             "grist-widget": {
               "version": "0.7.0",
               "singleton": true,
-              "import": "/home/alex/work/jupyterlite-demo/extension/lib/index.js"
+              "import": "/Users/georgegevoian/grist/jupyterlite-widget/extension/lib/index.js"
             }
           }
         }
