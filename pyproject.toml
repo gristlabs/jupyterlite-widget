@@ -1,0 +1,26 @@
+[project]
+name = "jupyterlite-widget"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "grist-jupyterlab-widget",
+    "ipywidgets>=8.1.7",
+    "jupyterlab==4.4.9",
+    "jupyterlite-core==0.6.1",
+    "jupyterlite-pyodide-kernel==0.6.1",
+    "notebook~=7.4.5",
+    "plotly>=6.3.1",
+]
+[project.optional-dependencies]
+dev = [
+]
+
+[tool.uv.workspace]
+members = [
+    "extension",
+]
+
+[tool.uv.sources]
+grist-jupyterlab-widget = { workspace = true, editable = true }
