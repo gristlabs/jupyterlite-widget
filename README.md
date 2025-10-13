@@ -17,6 +17,14 @@ This repo is a custom deployment of JupyterLite generated from https://github.co
    - `jupyter labextension develop ./extension` (part of `dev.sh`), maybe with the `--overwrite` flag.
    - `jlpm build` and `jlpm watch` within the `extension` folder
 
+Or with `uv`
+```sh
+cd ./extension
+uv run jlpm install && uv run jlpm build && uv run jlpm watch
+
+# Second terminal
+./package.sh && cd extension && uv run jupyter lite serve
+```
 ## Deployment
 
 In the [grist-widget](https://github.com/gristlabs/grist-widget) repo, the `jupyterlite` folder is a git submodule pointing at a commit in the `gh-pages` branch of this repo. To fully deploy changes here to production for use in Grist, you need to:
