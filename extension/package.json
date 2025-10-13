@@ -47,15 +47,15 @@
         "watch:labextension": "jupyter labextension watch ."
     },
     "dependencies": {
-        "@jupyterlab/application": "^4.0.0",
-        "@jupyterlab/filebrowser": "^4.0.6",
-        "comlink": "^4.4.1"
+        "@jupyterlab/application": "^4.4.9",
+        "@jupyterlab/filebrowser": "^4.4.9",
+        "comlink": "^4.4.2"
     },
     "devDependencies": {
-        "@jupyterlab/builder": "^4.0.0",
-        "@types/json-schema": "^7.0.11",
+        "@jupyterlab/builder": "^4.4.9",
+        "@types/json-schema": "^7.0.15",
         "@types/react": "^18.0.26",
-        "@types/react-addons-linked-state-mixin": "^0.14.22",
+        "@types/react-addons-linked-state-mixin": "^0.14.27",
         "@typescript-eslint/eslint-plugin": "^6.1.0",
         "@typescript-eslint/parser": "^6.1.0",
         "css-loader": "^6.7.1",
@@ -73,7 +73,7 @@
         "stylelint-csstree-validator": "^3.0.0",
         "stylelint-prettier": "^4.0.0",
         "typescript": "~5.0.2",
-        "yjs": "^13.5.0"
+        "yjs": "^13.6.27"
     },
     "sideEffects": [
         "style/*.css",
