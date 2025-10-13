@@ -6,6 +6,7 @@ This repo is a custom deployment of JupyterLite generated from https://github.co
 
 ## Development
 
+### With `pip` and `jupyter lab`
 1. Create and activate a virtual environment
 2. `pip install -r requirements.txt`
 3. In the `extension` folder, run `jlpm install`, then `jlpm build`, then `jlpm watch`. `jlpm` is a pinned version of `yarn` that is installed with JupyterLab, so you can use `yarn` or `npm` instead. `jlpm watch` will rebuild the extension when changes are made to the code under `extension/src`. For some reason it doesn't work without running `jlpm build` first at least once.
@@ -17,7 +18,7 @@ This repo is a custom deployment of JupyterLite generated from https://github.co
    - `jupyter labextension develop ./extension` (part of `dev.sh`), maybe with the `--overwrite` flag.
    - `jlpm build` and `jlpm watch` within the `extension` folder
 
-Or with `uv`
+### with `uv`
 ```sh
 cd ./extension
 uv run jlpm install && uv run jlpm build && uv run jlpm watch
