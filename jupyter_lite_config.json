@@ -1,0 +1,7 @@
+{
+  "PipliteAddon": {
+    "piplite_urls": [
+      "wheels/ipython-8.19.0-py3-none-any.whl"
+    ]
+  }
+}
