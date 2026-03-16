@@ -4,16 +4,16 @@ import inspect
 import sys
 import traceback
 import warnings
-from functools import partial
 
 import IPython.core.display_functions
 import IPython.display
-from IPython import get_ipython
 import js  # noqa
 import pyodide_js  # noqa
+from IPython import get_ipython
 from pyodide.ffi import to_js, create_proxy  # noqa
 
 from .utils import maybe_await
+from ..objtypes import decode_bulk_values, decode_record
 
 original_print = print
 original_display = IPython.display.display
@@ -113,17 +113,17 @@ callback_registry = dict(
 )
 
 
-async def on_records_dispatch(grist, *_):
-    records = await grist.fetch_selected_table()
+async def on_records_dispatch(records, *_):
+    records = decode_bulk_values(records)
     for callback in callback_registry["onRecords"].values():
         await callback(records)
 
 
-async def on_record_dispatch(grist, record, *_rest):
+async def on_record_dispatch(record, *_rest):
     if not record:
         return
 
-    record = await grist.fetch_selected_record(record["id"])
+    record = decode_record(record)
     for callback in callback_registry["onRecord"].values():
         await callback(record)
 
@@ -160,6 +160,6 @@ async def add_to_callback_registry(grist, name, callback):
             onRecord=on_record_dispatch,
         )[name]
         method = getattr(grist.raw, name)
-        await method(partial(dispatch, grist))
+        await method(dispatch, keepEncoded=True, format="columns")
     registry[callback.__name__] = wrapped
     return wrapped

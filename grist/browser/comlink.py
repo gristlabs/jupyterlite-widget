@@ -18,9 +18,7 @@ class ComlinkProxy:
 
     async def __call__(self, *args, **kwargs):
         if any(callable(arg) for arg in args):
-            assert (
-                len(args) == 1 and not kwargs
-            ), "Only one argument is supported for callbacks"
+            assert len(args) == 1, "Only one argument is supported for callbacks"
             [callback] = args
 
             async def wrapper(*callback_args):
@@ -31,7 +29,8 @@ class ComlinkProxy:
 
             js._grist_tmp1 = self._proxy
             js._grist_tmp2 = js.Comlink.proxy(create_proxy(wrapper))
-            result = await js.eval("_grist_tmp1(_grist_tmp2)")
+            js._grist_tmp3 = to_js(kwargs, dict_converter=js.Object.fromEntries)
+            result = await js.eval("_grist_tmp1(_grist_tmp2, _grist_tmp3)")
         else:
             args = [to_js(arg, dict_converter=js.Object.fromEntries) for arg in args]
             kwargs = {
