@@ -27,7 +27,7 @@
       {
         "extension": "./extension",
         "liteExtension": false,
-        "load": "static/remoteEntry.956fbc2dccd16ef14498.js",
+        "load": "static/remoteEntry.e35b1ccd3c9365605ac9.js",
         "name": "grist-widget",
         "style": "./style"
       },
@@ -326,6 +326,7 @@
     "litePluginSettings": {
       "@jupyterlite/pyodide-kernel-extension:kernel": {
         "pipliteUrls": [
+          "./pypi/all.json?sha256=9f421578c3c3e119872ffcb8f240077560bff20862a6e6bb5787ec7acdcdfa35",
           "./extensions/@jupyterlite/pyodide-kernel-extension/static/pypi/all.json?sha256=559fdb0c528ad0e0843f12d3dec4e043c112bcfe56ede80ae019755d81c930b0"
         ],
         "pyodideUrl": "https://cdn.jsdelivr.net/pyodide/v0.24.0/pyc/pyodide.js"

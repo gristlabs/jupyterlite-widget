@@ -415,7 +415,7 @@ __webpack_require__.d(exports, {
 /******/ 		var installedModules = {};
 /******/ 		var moduleToHandlerMapping = {
 /******/ 			"webpack/sharing/consume/default/comlink/comlink": () => (loadStrictVersionCheckFallback("default", "comlink", [1,4,4,1], () => (__webpack_require__.e("vendors-node_modules_comlink_dist_esm_comlink_mjs").then(() => (() => (__webpack_require__(/*! comlink */ "./node_modules/comlink/dist/esm/comlink.mjs"))))))),
-/******/ 			"webpack/sharing/consume/default/@jupyterlab/filebrowser": () => (loadSingletonVersionCheck("default", "@jupyterlab/filebrowser", [1,4,0,6]))
+/******/ 			"webpack/sharing/consume/default/@jupyterlab/filebrowser": () => (loadSingletonVersionCheck("default", "@jupyterlab/filebrowser", [1,4,5,6]))
 /******/ 		};
 /******/ 		// no consumes in initial chunks
 /******/ 		var chunkMapping = {
@@ -558,4 +558,4 @@ __webpack_require__.d(exports, {
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=remoteEntry.956fbc2dccd16ef14498.js.map
+//# sourceMappingURL=remoteEntry.e35b1ccd3c9365605ac9.js.map

@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "grist": [
     {
-      "name": "JupyterLite Notebook",
+      "name": "JupyterLite notebook",
       "url": "https://gristlabs.github.io/grist-widget/jupyterlite/lab/index.html",
       "widgetId": "@gristlabs/widget-jupyterlite",
       "published": true,
